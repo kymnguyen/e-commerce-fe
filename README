@@ -1,0 +1,8 @@
+# Requirement 
+## Input
+> To allows users to enter a list of Customers (Full Name, Date of Birth - DOB, Email), Shop (Name, Location) and Product (Name, Price).
+> A Customer can buy many Products in many Shops. 
+> A Shop has many Products. 
+> You need to enter at least 30 Customers, 3 Shops, and 30 Products.
+## Output
+> The sorting results will be returned to FE to display on the UI (If there are not enough 30 Customers, 3 Shops, and 30 Products, the UI will display an Insufficient Data error message).
