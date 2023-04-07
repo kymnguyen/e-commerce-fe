@@ -5,6 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Node version
 v18.15.0
 
+## Run sonar
+### `npm run sonar`
+
 ## Available Scripts
 
 In the project directory, you can run:
