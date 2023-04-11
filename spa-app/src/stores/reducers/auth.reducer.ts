@@ -63,7 +63,7 @@ const permissionReducer = (
   }
 };
 
-export {
-    authReducer,
-    permissionReducer,
-}
+export default combineReducers({
+  auth: authReducer,
+  permissionReducer,
+});

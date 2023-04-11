@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Shop } from "../shop";
 
 export type Product = {
