@@ -1,10 +1,28 @@
-import { legacy_createStore as createStore, combineReducers } from "redux";
-import { authReducer, permissionReducer } from "./reducers/auth.reducer";
+import {
+    Dispatch,
+    Middleware,
+    MiddlewareAPI,
+    applyMiddleware,
+    legacy_createStore as createStore
+} from "redux";
+import rootReducer from "./reducers/auth.reducer";
 
-const rootReducer = combineReducers({
-    auth: authReducer,
-    permission: permissionReducer
-});
+type RootState = ReturnType<typeof rootReducer>;
 
-export type RootState = ReturnType<typeof rootReducer>;
-export const store = createStore(rootReducer);
+const functionMiddleware: Middleware<
+    {}, // legacy types parameter, can be ignored
+    RootState
+> = ({ dispatch, getState }: MiddlewareAPI<Dispatch, RootState>) => (
+    next: Dispatch
+) => (action: any) => {
+    if (typeof action === 'function') {
+        return action(dispatch, getState);
+    }
+
+    return next(action);
+};
+
+const store = createStore(rootReducer,
+    applyMiddleware(functionMiddleware));
+
+export { type RootState, store }
