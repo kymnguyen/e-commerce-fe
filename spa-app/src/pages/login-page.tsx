@@ -19,8 +19,8 @@ const LoginPage: React.FC<LoginPageProps> = (props) => {
         <div>
             <h1>Login Page </h1>
             <LoginForm onLogin={handleLoginFormSubmit} />
-            <h1>Token: {user.token}</h1>
-            <h1> {user.error}</h1>
+            <h1>Token: {user?.token}</h1>
+            <h1> {user?.error}</h1>
         </div>
     );
 };
