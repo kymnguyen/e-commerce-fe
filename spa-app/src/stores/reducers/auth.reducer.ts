@@ -4,16 +4,9 @@ import {
   PermissionActionTypes,
   AuthAction,
   PermissionAction,
+  AuthState,
+  PermissionState,
 } from '../../types';
-
-interface AuthState {
-  token: string | null;
-  error: string | null;
-}
-
-interface PermissionState {
-  permissions: string[];
-}
 
 const initialAuthState: AuthState = {
   token: null,

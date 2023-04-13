@@ -11,6 +11,16 @@ enum PermissionActionTypes {
     SET_PERMISSIONS = 'PERMISSIONS_SET_PERMISSIONS',
 }
 
+
+interface AuthState {
+    token: string | null;
+    error: string | null;
+}
+
+interface PermissionState {
+    permissions: string[];
+}
+
 interface LoginRequestAction {
     type: AuthActionTypes.LOGIN_REQUEST;
 }
@@ -46,16 +56,13 @@ type PermissionAction = SetPermissionsAction;
 
 export {
     AuthActionTypes,
-    PermissionActionTypes
+    PermissionActionTypes,
 };
 
 export type {
-    LoginRequestAction,
-    LoginSuccessAction,
-    LoginFailureAction,
-    LogoutAction,
-    SetPermissionsAction,
     AuthAction,
-    PermissionAction
+    PermissionAction,
+    AuthState,
+    PermissionState
 };
 
